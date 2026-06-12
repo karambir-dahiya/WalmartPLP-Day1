@@ -13,7 +13,7 @@ class AlbumViewModel {
     
     func fetchAlbums() async {
         do {
-             albums = try await AlbumService().fetchAlbums(pageNumber: 1, limit: 20)
+             albums = try await AlbumService().fetchAlbums(page: 1)
         } catch {
             print("Error")
         }

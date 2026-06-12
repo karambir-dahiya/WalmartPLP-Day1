@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         )
         albumCollectionView.delegate = self
         albumCollectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        albumCollectionView.collectionViewLayout = layout
         Task {
             await self.vm.fetchAlbums()
             DispatchQueue.main.async {
@@ -38,18 +42,36 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vm.albums.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumCollectionView.dequeueReusableCell(withReuseIdentifier: AlbumViewCell.albumCellIdentifier, for: indexPath) as! AlbumViewCell
-        cell.setData(album: vm.albums[indexPath.row])
+        cell.configure(with: vm.albums[indexPath.row])
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding = 15
+        let spacing = 1
+        let totalSpacing = (padding * 2) + spacing
+        let width = Int((albumCollectionView.frame.width - 31)) / 2
+        let height = width + 50
+        return CGSize(width: width, height: height)
+    }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        let threshold = 5
+        if indexPath.item >= vm.albums.count - threshold {
+            print("Fetch more items")
+//            fetchPhotos(page: currentPage)
+        }
+        
+    }
 }
 
 

@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,32 +17,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="369" height="252"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9S-N4-qn2">
+                        <rect key="frame" x="0.0" y="5" width="369" height="242"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Sq-RX-uw7">
-                        <rect key="frame" x="15" y="10" width="339" height="201.66666666666666"/>
+                        <rect key="frame" x="5" y="15" width="359" height="196.66666666666666"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J5-c2-x88">
-                        <rect key="frame" x="15" y="221.66666666666666" width="339" height="20.333333333333343"/>
+                        <rect key="frame" x="5" y="216.66666666666666" width="359" height="20.333333333333343"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="3J5-c2-x88" secondAttribute="bottom" constant="10" id="Jp5-zw-PHh"/>
-                    <constraint firstAttribute="trailing" secondItem="3J5-c2-x88" secondAttribute="trailing" constant="15" id="P98-HS-AO5"/>
-                    <constraint firstAttribute="trailing" secondItem="3Sq-RX-uw7" secondAttribute="trailing" constant="15" id="ZOm-Xj-ymk"/>
-                    <constraint firstItem="3J5-c2-x88" firstAttribute="top" secondItem="3Sq-RX-uw7" secondAttribute="bottom" constant="10" id="ai3-RX-hHS"/>
-                    <constraint firstItem="3Sq-RX-uw7" firstAttribute="leading" secondItem="Hix-hb-ekA" secondAttribute="leading" constant="15" id="mCC-L0-vke"/>
-                    <constraint firstItem="3J5-c2-x88" firstAttribute="leading" secondItem="Hix-hb-ekA" secondAttribute="leading" constant="15" id="npF-0b-2yo"/>
-                    <constraint firstItem="3Sq-RX-uw7" firstAttribute="top" secondItem="Hix-hb-ekA" secondAttribute="top" constant="10" id="xUM-si-D86"/>
+                    <constraint firstItem="3J5-c2-x88" firstAttribute="top" secondItem="3Sq-RX-uw7" secondAttribute="bottom" constant="5" id="1HY-zz-ihL"/>
+                    <constraint firstAttribute="trailing" secondItem="i9S-N4-qn2" secondAttribute="trailing" id="1M9-wz-ykx"/>
+                    <constraint firstItem="i9S-N4-qn2" firstAttribute="bottom" secondItem="3J5-c2-x88" secondAttribute="bottom" constant="10" id="5xY-Cq-4Cd"/>
+                    <constraint firstItem="i9S-N4-qn2" firstAttribute="leading" secondItem="Hix-hb-ekA" secondAttribute="leading" id="AHf-Qg-sb2"/>
+                    <constraint firstItem="3Sq-RX-uw7" firstAttribute="top" secondItem="i9S-N4-qn2" secondAttribute="top" constant="10" id="QQu-co-OSj"/>
+                    <constraint firstItem="i9S-N4-qn2" firstAttribute="trailing" secondItem="3Sq-RX-uw7" secondAttribute="trailing" constant="5" id="RcS-QI-U6L"/>
+                    <constraint firstItem="i9S-N4-qn2" firstAttribute="top" secondItem="Hix-hb-ekA" secondAttribute="top" constant="5" id="XKL-9Z-gwf"/>
+                    <constraint firstItem="3Sq-RX-uw7" firstAttribute="leading" secondItem="i9S-N4-qn2" secondAttribute="leading" constant="5" id="fld-nw-TvO"/>
+                    <constraint firstItem="3J5-c2-x88" firstAttribute="leading" secondItem="i9S-N4-qn2" secondAttribute="leading" constant="5" id="hXh-lB-sNB"/>
+                    <constraint firstAttribute="bottom" secondItem="i9S-N4-qn2" secondAttribute="bottom" constant="5" id="jbJ-kN-Fgs"/>
+                    <constraint firstItem="i9S-N4-qn2" firstAttribute="trailing" secondItem="3J5-c2-x88" secondAttribute="trailing" constant="5" id="pcU-Gc-TcV"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="369" height="252"/>
             <connections>
+                <outlet property="bgView" destination="i9S-N4-qn2" id="bL6-ET-9Co"/>
                 <outlet property="thumbnailView" destination="3Sq-RX-uw7" id="ooU-Ec-6vh"/>
                 <outlet property="title" destination="3J5-c2-x88" id="2Be-Ru-eOd"/>
             </connections>
             <point key="canvasLocation" x="-482" y="-239"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
