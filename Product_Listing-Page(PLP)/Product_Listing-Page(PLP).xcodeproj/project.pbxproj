@@ -7,32 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product_Listing-Page(PLP).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4653D4402FDC3BA600D9AEE0 /* Product_Listing-Page(PLP).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product_Listing-Page(PLP).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4653D4312FDC3B6A00D9AEE0 /* Exceptions for "Product_Listing-Page(PLP)" folder in "Product_Listing-Page(PLP)" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */ = {
+		4653D4422FDC3BA600D9AEE0 /* Product_Listing-Page(PLP) */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				4653D4312FDC3B6A00D9AEE0 /* Exceptions for "Product_Listing-Page(PLP)" folder in "Product_Listing-Page(PLP)" target */,
-			);
 			path = "Product_Listing-Page(PLP)";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4653D41C2FDC3B6900D9AEE0 /* Frameworks */ = {
+		4653D43D2FDC3BA600D9AEE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4653D4162FDC3B6900D9AEE0 = {
+		4653D4372FDC3BA600D9AEE0 = {
 			isa = PBXGroup;
 			children = (
-				4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
-				4653D4202FDC3B6900D9AEE0 /* Products */,
+				4653D4422FDC3BA600D9AEE0 /* Product_Listing-Page(PLP) */,
+				4653D4412FDC3BA600D9AEE0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4653D4202FDC3B6900D9AEE0 /* Products */ = {
+		4653D4412FDC3BA600D9AEE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */,
+				4653D4402FDC3BA600D9AEE0 /* Product_Listing-Page(PLP).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */ = {
+		4653D43F2FDC3BA600D9AEE0 /* Product_Listing-Page(PLP) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4653D4322FDC3B6A00D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */;
+			buildConfigurationList = 4653D44B2FDC3BA600D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */;
 			buildPhases = (
-				4653D41B2FDC3B6900D9AEE0 /* Sources */,
-				4653D41C2FDC3B6900D9AEE0 /* Frameworks */,
-				4653D41D2FDC3B6900D9AEE0 /* Resources */,
+				4653D43C2FDC3BA600D9AEE0 /* Sources */,
+				4653D43D2FDC3BA600D9AEE0 /* Frameworks */,
+				4653D43E2FDC3BA600D9AEE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
+				4653D4422FDC3BA600D9AEE0 /* Product_Listing-Page(PLP) */,
 			);
 			name = "Product_Listing-Page(PLP)";
 			packageProductDependencies = (
 			);
 			productName = "Product_Listing-Page(PLP)";
-			productReference = 4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */;
+			productReference = 4653D4402FDC3BA600D9AEE0 /* Product_Listing-Page(PLP).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4653D4172FDC3B6900D9AEE0 /* Project object */ = {
+		4653D4382FDC3BA600D9AEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
-					4653D41E2FDC3B6900D9AEE0 = {
+					4653D43F2FDC3BA600D9AEE0 = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
 			};
-			buildConfigurationList = 4653D41A2FDC3B6900D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */;
+			buildConfigurationList = 4653D43B2FDC3BA600D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 4653D4162FDC3B6900D9AEE0;
+			mainGroup = 4653D4372FDC3BA600D9AEE0;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 4653D4202FDC3B6900D9AEE0 /* Products */;
+			productRefGroup = 4653D4412FDC3BA600D9AEE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
+				4653D43F2FDC3BA600D9AEE0 /* Product_Listing-Page(PLP) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4653D41D2FDC3B6900D9AEE0 /* Resources */ = {
+		4653D43E2FDC3BA600D9AEE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4653D41B2FDC3B6900D9AEE0 /* Sources */ = {
+		4653D43C2FDC3BA600D9AEE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,71 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4653D4332FDC3B6A00D9AEE0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TDY4U9GF8;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Product_Listing-Page(PLP)/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4653D4342FDC3B6A00D9AEE0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5TDY4U9GF8;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Product_Listing-Page(PLP)/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		4653D4352FDC3B6A00D9AEE0 /* Debug */ = {
+		4653D4492FDC3BA600D9AEE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		4653D4362FDC3B6A00D9AEE0 /* Release */ = {
+		4653D44A2FDC3BA600D9AEE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,28 +246,92 @@
 			};
 			name = Release;
 		};
+		4653D44C2FDC3BA600D9AEE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TDY4U9GF8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4653D44D2FDC3BA600D9AEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TDY4U9GF8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4653D41A2FDC3B6900D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */ = {
+		4653D43B2FDC3BA600D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4653D4352FDC3B6A00D9AEE0 /* Debug */,
-				4653D4362FDC3B6A00D9AEE0 /* Release */,
+				4653D4492FDC3BA600D9AEE0 /* Debug */,
+				4653D44A2FDC3BA600D9AEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4653D4322FDC3B6A00D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */ = {
+		4653D44B2FDC3BA600D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4653D4332FDC3B6A00D9AEE0 /* Debug */,
-				4653D4342FDC3B6A00D9AEE0 /* Release */,
+				4653D44C2FDC3BA600D9AEE0 /* Debug */,
+				4653D44D2FDC3BA600D9AEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4653D4172FDC3B6900D9AEE0 /* Project object */;
+	rootObject = 4653D4382FDC3BA600D9AEE0 /* Project object */;
 }
