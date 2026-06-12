@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		467D38CC2FDAAF3400BD8782 /* WalmartPLP-Day1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WalmartPLP-Day1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product_Listing-Page(PLP).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		467D38DE2FDAAF3400BD8782 /* Exceptions for "WalmartPLP-Day1" folder in "WalmartPLP-Day1" target */ = {
+		4653D4312FDC3B6A00D9AEE0 /* Exceptions for "Product_Listing-Page(PLP)" folder in "Product_Listing-Page(PLP)" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 467D38CB2FDAAF3400BD8782 /* WalmartPLP-Day1 */;
+			target = 4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		467D38CE2FDAAF3400BD8782 /* WalmartPLP-Day1 */ = {
+		4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				467D38DE2FDAAF3400BD8782 /* Exceptions for "WalmartPLP-Day1" folder in "WalmartPLP-Day1" target */,
+				4653D4312FDC3B6A00D9AEE0 /* Exceptions for "Product_Listing-Page(PLP)" folder in "Product_Listing-Page(PLP)" target */,
 			);
-			path = "WalmartPLP-Day1";
+			path = "Product_Listing-Page(PLP)";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		467D38C92FDAAF3400BD8782 /* Frameworks */ = {
+		4653D41C2FDC3B6900D9AEE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		467D38C32FDAAF3400BD8782 = {
+		4653D4162FDC3B6900D9AEE0 = {
 			isa = PBXGroup;
 			children = (
-				467D38CE2FDAAF3400BD8782 /* WalmartPLP-Day1 */,
-				467D38CD2FDAAF3400BD8782 /* Products */,
+				4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
+				4653D4202FDC3B6900D9AEE0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		467D38CD2FDAAF3400BD8782 /* Products */ = {
+		4653D4202FDC3B6900D9AEE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				467D38CC2FDAAF3400BD8782 /* WalmartPLP-Day1.app */,
+				4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		467D38CB2FDAAF3400BD8782 /* WalmartPLP-Day1 */ = {
+		4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 467D38DF2FDAAF3400BD8782 /* Build configuration list for PBXNativeTarget "WalmartPLP-Day1" */;
+			buildConfigurationList = 4653D4322FDC3B6A00D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */;
 			buildPhases = (
-				467D38C82FDAAF3400BD8782 /* Sources */,
-				467D38C92FDAAF3400BD8782 /* Frameworks */,
-				467D38CA2FDAAF3400BD8782 /* Resources */,
+				4653D41B2FDC3B6900D9AEE0 /* Sources */,
+				4653D41C2FDC3B6900D9AEE0 /* Frameworks */,
+				4653D41D2FDC3B6900D9AEE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				467D38CE2FDAAF3400BD8782 /* WalmartPLP-Day1 */,
+				4653D4212FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
 			);
-			name = "WalmartPLP-Day1";
+			name = "Product_Listing-Page(PLP)";
 			packageProductDependencies = (
 			);
-			productName = "WalmartPLP-Day1";
-			productReference = 467D38CC2FDAAF3400BD8782 /* WalmartPLP-Day1.app */;
+			productName = "Product_Listing-Page(PLP)";
+			productReference = 4653D41F2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		467D38C42FDAAF3400BD8782 /* Project object */ = {
+		4653D4172FDC3B6900D9AEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
-					467D38CB2FDAAF3400BD8782 = {
+					4653D41E2FDC3B6900D9AEE0 = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
 			};
-			buildConfigurationList = 467D38C72FDAAF3400BD8782 /* Build configuration list for PBXProject "WalmartPLP-Day1" */;
+			buildConfigurationList = 4653D41A2FDC3B6900D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 467D38C32FDAAF3400BD8782;
+			mainGroup = 4653D4162FDC3B6900D9AEE0;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 467D38CD2FDAAF3400BD8782 /* Products */;
+			productRefGroup = 4653D4202FDC3B6900D9AEE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				467D38CB2FDAAF3400BD8782 /* WalmartPLP-Day1 */,
+				4653D41E2FDC3B6900D9AEE0 /* Product_Listing-Page(PLP) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		467D38CA2FDAAF3400BD8782 /* Resources */ = {
+		4653D41D2FDC3B6900D9AEE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		467D38C82FDAAF3400BD8782 /* Sources */ = {
+		4653D41B2FDC3B6900D9AEE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		467D38E02FDAAF3400BD8782 /* Debug */ = {
+		4653D4332FDC3B6A00D9AEE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5TDY4U9GF8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WalmartPLP-Day1/Info.plist";
+				INFOPLIST_FILE = "Product_Listing-Page(PLP)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -158,7 +158,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.WalmartPLP-Day1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -170,7 +170,7 @@
 			};
 			name = Debug;
 		};
-		467D38E12FDAAF3400BD8782 /* Release */ = {
+		4653D4342FDC3B6A00D9AEE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -179,7 +179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5TDY4U9GF8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WalmartPLP-Day1/Info.plist";
+				INFOPLIST_FILE = "Product_Listing-Page(PLP)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -190,7 +190,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.WalmartPLP-Day1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kd.Product-Listing-Page-PLP-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -202,7 +202,7 @@
 			};
 			name = Release;
 		};
-		467D38E22FDAAF3400BD8782 /* Debug */ = {
+		4653D4352FDC3B6A00D9AEE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +266,7 @@
 			};
 			name = Debug;
 		};
-		467D38E32FDAAF3400BD8782 /* Release */ = {
+		4653D4362FDC3B6A00D9AEE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -326,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		467D38C72FDAAF3400BD8782 /* Build configuration list for PBXProject "WalmartPLP-Day1" */ = {
+		4653D41A2FDC3B6900D9AEE0 /* Build configuration list for PBXProject "Product_Listing-Page(PLP)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				467D38E22FDAAF3400BD8782 /* Debug */,
-				467D38E32FDAAF3400BD8782 /* Release */,
+				4653D4352FDC3B6A00D9AEE0 /* Debug */,
+				4653D4362FDC3B6A00D9AEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		467D38DF2FDAAF3400BD8782 /* Build configuration list for PBXNativeTarget "WalmartPLP-Day1" */ = {
+		4653D4322FDC3B6A00D9AEE0 /* Build configuration list for PBXNativeTarget "Product_Listing-Page(PLP)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				467D38E02FDAAF3400BD8782 /* Debug */,
-				467D38E12FDAAF3400BD8782 /* Release */,
+				4653D4332FDC3B6A00D9AEE0 /* Debug */,
+				4653D4342FDC3B6A00D9AEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 467D38C42FDAAF3400BD8782 /* Project object */;
+	rootObject = 4653D4172FDC3B6900D9AEE0 /* Project object */;
 }
