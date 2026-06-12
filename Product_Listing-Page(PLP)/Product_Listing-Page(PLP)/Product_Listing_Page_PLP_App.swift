@@ -11,7 +11,10 @@ import SwiftUI
 struct Product_Listing_Page_PLP_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
+            
         }
     }
 }
