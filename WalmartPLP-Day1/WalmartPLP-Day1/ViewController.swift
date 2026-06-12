@@ -11,7 +11,11 @@ class ViewController: UIViewController {
     
     var vm = AlbumViewModel()
     
+    let refreshControl = UIRefreshControl()
     
+    var searchWorkItem: DispatchWorkItem?
+    
+    var searchTask: URLSessionDataTask?
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var albumCollectionView: UICollectionView!
@@ -36,7 +40,29 @@ class ViewController: UIViewController {
                 self.albumCollectionView.reloadData()
             }
         }
+        
+        refreshControl.addTarget(self,
+                                 action: #selector(handleRefresh),
+                                 for: .valueChanged)
+        
+        albumCollectionView.refreshControl = refreshControl
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
+        refreshControl.tintColor = .systemGray
        
+    }
+    
+    @objc func handleRefresh() async {
+      
+        
+        vm.albums.removeAll()
+        
+        DispatchQueue.main.async {
+            self.albumCollectionView.reloadData()
+        }
+        
+        await vm.fetchAlbums()
+        self.refreshControl.endRefreshing()
+        
     }
 
 
