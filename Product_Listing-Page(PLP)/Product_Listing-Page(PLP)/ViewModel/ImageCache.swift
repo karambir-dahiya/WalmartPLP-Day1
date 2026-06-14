@@ -6,71 +6,35 @@
 //
 
 import SwiftUI
-import Combine
-
-final class ImageCache {
-    static let shared = ImageCache()
-    
-    private init() {}
-    
-    let cache = NSCache<NSString, UIImage>()
-}
-
-
-
-
-final class ImageLoader: ObservableObject {
-    
-    @Published var image: UIImage?
-    
-    func load(from urlString: String) {
-        
-        if let cachedImage = ImageCache.shared.cache.object(forKey: urlString as NSString) {
-            self.image = cachedImage
-            return
-        }
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            
-            guard let data = data,
-                  let downloadedImage = UIImage(data: data) else {
-                return
-            }
-            
-            ImageCache.shared.cache.setObject(
-                downloadedImage,
-                forKey: urlString as NSString
-            )
-            
-            DispatchQueue.main.async {
-                self.image = downloadedImage
-            }
-        }
-        .resume()
-    }
-}
-
 
 struct CachedImageView: View {
-    
-    let urlString: String
-    
-    @StateObject private var loader = ImageLoader()
+    let thumbnailData: Data?
+    let fallbackURLString: String
     
     var body: some View {
         Group {
-            if let image = loader.image {
-                Image(uiImage: image)
+            if let data = thumbnailData, let uiImage = UIImage(data: data) {
+                // Local disk cache hits here instantly during airplane mode
+                Image(uiImage: uiImage)
                     .resizable()
-                    .cornerRadius(20)
+                    .scaledToFill()
             } else {
-                ProgressView()
+                // Fallback network loader if image hasn't been cached yet
+                AsyncImage(url: URL(string: fallbackURLString)) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image.resizable().scaledToFit()
+                    case .failure:
+                        Image(systemName: "photo") // Error placeholder
+                            .foregroundColor(.gray)
+                    case .empty:
+                        ProgressView() // Loading indicator
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
             }
         }
-        .onAppear {
-            loader.load(from: urlString)
-        }
+        .clipped()
     }
 }

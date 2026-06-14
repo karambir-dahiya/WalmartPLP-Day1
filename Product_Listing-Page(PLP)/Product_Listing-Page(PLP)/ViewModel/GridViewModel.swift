@@ -5,75 +5,145 @@
 //  Created by Siyaa Dahiya on 12/06/26.
 //
 
-//https://rss.marketingtools.apple.com/api/v2/us/apps/top-free/100/apps.json
 
+import SwiftUI
+import SwiftData
 import Combine
-import Foundation
-
-enum LoadingState {
-    
-    case idle
-    
-    case refreshing
-    
-    case paginating
-    
-}
 
 @MainActor
-class GridViewModel: ObservableObject {
-    @Published var products: [Product] = []
-    @Published var state: LoadingState = .idle
-    var countPerPage = 20
-    var pageNumber = 1
-    private var hasMoreData = true
+class ProductViewModel: ObservableObject {
+    @Published var products: [CachedProduct] = []
+    @Published var isLoading = false
+    @Published var isRefreshing = false
     
-    func refreshData() async {
-        guard state != .refreshing else { return }
-        state = .refreshing
+    var pageNumber = 1
+    let limit = 20
+    var hasMoreData = true
+    
+    private var modelContext: ModelContext?
+    
+    // Safe fallback init
+    init() {}
+    
+    func setupContext(_ context: ModelContext) {
+        // Prevent duplicate setup passes if the view re-renders
+        guard self.modelContext == nil else { return }
         
-        defer { state = .idle }
+        self.modelContext = context
         
-        pageNumber = 1
-        hasMoreData = true
-        products.removeAll()
-        
-        await getData()
+        // Context is now fully wired up and ready to read from disk
+        loadLocalCache()
     }
     
-    func getData() async {
-        let urlString = "https://dummyjson.com/products?limit=\(countPerPage)&skip=\((pageNumber - 1) * countPerPage)"
-        print(urlString)
-        guard let url = URL(string: urlString) else {
+    // 1. Fetch instantly from disk
+    func loadLocalCache() {
+        
+        // Safely unwrap the context now that setupContext has run
+        guard let modelContext = modelContext else {
+            print("Database context is unexpectedly nil")
             return
         }
         
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            
-            let newFeeds = try JSONDecoder().decode(ProductModel.self, from: data)
-            if newFeeds.products.isEmpty {
-                hasMoreData = false
-            } else {
-                products.append(contentsOf: newFeeds.products)
-                pageNumber += 1
-            }
-            
-        } catch is CancellationError {
-            
-            print("Request cancelled")
-            
-        } catch {
-            
-            print(error)
-            
+        let descriptor = FetchDescriptor<CachedProduct>(sortBy: [SortDescriptor(\.id)])
+        if let localItems = try? modelContext.fetch(descriptor) {
+            self.products = localItems
         }
     }
     
-    func loadMoreIfNeeded(currentItem item: Product) async {
-        guard state == .idle else { return }
-        state = .paginating
-        defer { state = .idle }
+    // 2. Network Fetch + Local Save
+    // Inside your ProductViewModel class...
+    
+    func getData() async {
+        guard !isLoading, hasMoreData else { return }
+        isLoading = true
+        defer { isLoading = false }
+        
+        let skip = (pageNumber - 1) * limit
+        let urlString = "https://dummyjson.com/products?limit=\(limit)&skip=\(skip)"
+        guard let url = URL(string: urlString) else { return }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let apiResponse = try JSONDecoder().decode(ProductAPIResponse.self, from: data)
+            
+            if apiResponse.products.isEmpty {
+                hasMoreData = false
+                return
+            }
+            
+            // Fetch image data concurrently for all incoming products
+            for apiProduct in apiResponse.products {
+                var imageData: Data? = nil
+                if let imgURL = URL(string: apiProduct.thumbnail) {
+                    // If offline or fails, it will gracefully fallback to nil without crashing
+                    imageData = try? await URLSession.shared.data(from: imgURL).0
+                }
+                
+                let cachedItem = CachedProduct(
+                    id: apiProduct.id,
+                    title: apiProduct.title,
+                    productDescription: apiProduct.description,
+                    thumbnailURL: apiProduct.thumbnail,
+                    thumbnailData: imageData // Saved locally on disk
+                )
+                modelContext?.insert(cachedItem)
+            }
+            
+            try? modelContext?.save()
+            loadLocalCache()
+            pageNumber += 1
+            
+        } catch {
+            print("Offline/Fetch error: \(error.localizedDescription)")
+        }
+    }
+
+    
+    func refreshData() async {
+        guard !isLoading else { return }
+        isRefreshing = true
+        defer { isRefreshing = false }
+        
+//        https://dummyjson.com/products?limit=20&skip=0
+        let urlString = "https://dummyjson.com/products?limit=\(limit)&skip=0"
+        guard let url = URL(string: urlString) else { return }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let APIResponse = try JSONDecoder().decode(ProductAPIResponse.self, from: data)
+            
+            // Clear old cache on pull-to-refresh success
+            try? modelContext?.delete(model: CachedProduct.self)
+            
+            for apiProduct in APIResponse.products {
+                
+                var imageData: Data? = nil
+                if let imgURL = URL(string: apiProduct.thumbnail) {
+                    // If offline or fails, it will gracefully fallback to nil without crashing
+                    imageData = try? await URLSession.shared.data(from: imgURL).0
+                }
+                let cachedItem = CachedProduct(
+                    id: apiProduct.id,
+                    title: apiProduct.title,
+                    productDescription: apiProduct.description,
+                    thumbnailURL: apiProduct.thumbnail,
+                    thumbnailData: imageData // Saved locally on disk
+                )
+                modelContext?.insert(cachedItem)
+            }
+            
+            try? modelContext?.save()
+            pageNumber += 1
+            hasMoreData = true
+            loadLocalCache()
+            
+        } catch {
+            print("Refresh failed. Retaining old cache.")
+        }
+    }
+    
+    func loadMoreIfNeeded(currentItem item: CachedProduct) async {
+        
         
         guard let index = products.firstIndex(where: { $0.id == item.id }) else {
             return
@@ -90,17 +160,39 @@ class GridViewModel: ObservableObject {
     }
 }
 
-
-struct ProductModel: Codable {
-    let products: [Product]
-    let total, skip, limit: Int
+// Temporary Decodable struct just for API parsing
+struct ProductAPIResponse: Decodable {
+    let products: [APIProduct]
 }
-
-// MARK: - Welcome
-struct Product: Codable, Hashable {
+struct APIProduct: Decodable {
     let id: Int
-    let title, description, thumbnail: String
+    let title: String
+    let description: String
+    let thumbnail: String
 }
+
+
+@Model
+class CachedProduct: Identifiable {
+    @Attribute(.unique) var id: Int
+    var title: String
+    var productDescription: String
+    var thumbnailURL: String
+    
+    // Stores the raw image bytes cleanly outside the main database file
+    @Attribute(.externalStorage) var thumbnailData: Data?
+    
+    init(id: Int, title: String, productDescription: String, thumbnailURL: String, thumbnailData: Data? = nil) {
+        self.id = id
+        self.title = title
+        self.productDescription = productDescription
+        self.thumbnailURL = thumbnailURL
+        self.thumbnailData = thumbnailData
+    }
+}
+
+
+
 
 
 //{
