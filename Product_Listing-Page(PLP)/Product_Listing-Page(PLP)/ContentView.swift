@@ -18,31 +18,42 @@ struct ContentView: View {
                 ScrollView {
                     LazyVGrid(columns:
                                 [GridItem(.flexible(minimum: 100, maximum: 200),alignment: .top),
+                                 GridItem(.flexible(minimum: 100, maximum: 200), alignment: .top),
                                  GridItem(.flexible(minimum: 100, maximum: 200), alignment: .top)]
                     ) {
-                        ForEach(vm.feeds , id: \.self) { item in
+                        ForEach(vm.products , id: \.self) { item in
                             VStack (alignment: .leading){
-                                AsyncImage(url: URL(string: item.artworkUrl100))
-                                    .scaledToFill()
-                                    .cornerRadius(10)
-                                Text("\(item.kind)")
-                                    .font(.title2)
-                                Text("\(item.name)")
-                                    .font(.callout)
-                                Text("\(item.releaseDate)")
-                                    .font(.callout)
+                                CachedImageView(urlString: item.thumbnail)
+                                    .frame(height: 120)
+                                Text("\(item.title)")
+                                    .font(.default)
+                                Text("\(item.description)")
+                                    .font(.caption2)
+                                    .lineLimit(3)
+                                Spacer()
+                            }
+                            .onAppear {
+                                Task {
+                                    await vm.loadMoreIfNeeded(currentItem: item)
+                                }
                             }
                         }
                         
                     }
                 }
+                .refreshable {
+                    await vm.refreshData()
+                }
             }
             .padding()
         }.navigationTitle("Product Listing")
-            .onAppear {
-                vm.getData()
+            .task {
+                if vm.products.isEmpty {
+                    
+                    await vm.getData()
+                    
+                }
             }
-    
     }
 }
 
