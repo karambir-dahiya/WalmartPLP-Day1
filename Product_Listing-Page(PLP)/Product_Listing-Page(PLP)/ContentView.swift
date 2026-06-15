@@ -17,6 +17,8 @@ struct ContentView: View {
     @EnvironmentObject private var networkMonitor: NetworkMonitor
     @StateObject private var vm = ProductViewModel()
     
+    @State private var searchText = ""
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) { // Aligns the banner to the bottom edge
@@ -37,6 +39,9 @@ struct ContentView: View {
                         }
                     }
                     .padding()
+                    .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search products")
                 }
                 .refreshable {
                     if networkMonitor.isConnected {

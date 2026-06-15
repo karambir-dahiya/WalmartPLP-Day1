@@ -10,6 +10,8 @@ import SwiftUI
 import SwiftData
 import Combine
 
+//https://dummyjson.com/products/search?q=phone&limit=20&skip=0
+
 @MainActor
 class ProductViewModel: ObservableObject {
     @Published var products: [CachedProduct] = []
